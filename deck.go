@@ -47,6 +47,7 @@ func (d deck) print() {
 // deal function
 // arguments inside function call
 // return two values of type deck
+// * whether or not modifying that underlying array
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
 }
