@@ -25,7 +25,11 @@ func main() {
 	// cards := []string{"Ace of Diamonds", newCard()}
 	// cards := deck{"Ace of Diamonds", newCard()}
 	// cards = append(cards, "Six of Spades")
+	// cards := newDeckFromFile("ting")
+	// cards.print()
 	cards := newDeck()
+	cards.shuffle()
+	cards.print()
 
 	// iterate over slice or closed set
 	// i is just the index
@@ -37,7 +41,6 @@ func main() {
 	// hand, remainingDeck := deal(cards, 5)
 	// hand.print()
 	// remainingDeck.print()
-	cards.saveToFile("my_cards")
 }
 
 // ? func | name | type
