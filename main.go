@@ -34,9 +34,10 @@ func main() {
 	// for i, card := range cards {
 	// 	fmt.Println(i, card)
 	// }
-	hand, remainingDeck := deal(cards, 5)
-	hand.print()
-	remainingDeck.print()
+	// hand, remainingDeck := deal(cards, 5)
+	// hand.print()
+	// remainingDeck.print()
+	cards.saveToFile("my_cards")
 }
 
 // ? func | name | type

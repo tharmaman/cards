@@ -1,6 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"io/ioutil"
+	"strings"
+)
+
+// ? byte slice represents a string
+// in a computer friendly way
+// use type conversion
+// []byte("Hi There!")
 
 // create a new type of 'deck
 // which is a slice of strings
@@ -37,4 +46,13 @@ func (d deck) print() {
 // return two values of type deck
 func deal(d deck, handSize int) (deck, deck) {
 	return d[:handSize], d[handSize:]
+}
+
+func (d deck) toString() string {
+	return strings.Join([]string(d), ",")
+}
+
+func (d deck) saveToFile(filename string) error {
+	// 0666 anyone can read and write file
+	return ioutil.WriteFile(filename, []byte(d.toString()), 0666)
 }
